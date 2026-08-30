@@ -1,0 +1,28 @@
+package org.firstinspires.ftc.teamcode.teleop;
+
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+
+import org.firstinspires.ftc.teamcode.subsystems.drive.Drive;
+
+@TeleOp(name="Strafer Drive")
+public class StraferDriveOpMode extends OpMode {
+    Drive motors= new Drive();
+
+    @Override
+    public void init(){
+        motors.init(hardwareMap);
+    }
+
+    @Override
+    public void loop(){
+        double y= -gamepad1.left_stick_y;
+        double x= gamepad1.left_stick_x;
+        double rx= gamepad1.right_stick_x;
+
+        motors.move(x,y,rx);
+
+    }
+
+
+}
