@@ -7,7 +7,9 @@ import org.firstinspires.ftc.teamcode.subsystems.drive.Drive;
 
 @TeleOp(name="Strafer Drive")
 public class StraferDriveOpMode extends OpMode {
-    Drive motors= new Drive();
+
+    final double strafeAdjust = 1.0;  //change this parameter to counteract imperfect strafing
+    Drive motors= new Drive(strafeAdjust);
 
     @Override
     public void init(){
